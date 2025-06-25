@@ -1,0 +1,360 @@
+{
+  "id": "54fc7596-189e-4cd5-8f20-65761c59b79b",
+  "version": "2.0",
+  "name": "KastaTestProject",
+  "url": "https://kasta.ua/",
+  "tests": [{
+    "id": "23e0e122-99e5-4684-bfa3-584c1d7789b5",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "4cd027bc-807e-423b-bed4-8d5408c7a9de",
+    "name": "T-shirt search",
+    "commands": [{
+      "id": "6c90c748-d368-45be-abb5-10a347ead990",
+      "comment": "",
+      "command": "open",
+      "target": "https://kasta.ua/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9bf884dc-842b-41d3-acee-6ea33264290d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "04274806-2056-4c7d-b802-48d9a3d9c982",
+      "comment": "",
+      "command": "store",
+      "target": "футболки",
+      "targets": [],
+      "value": "searchTerm"
+    }, {
+      "id": "3fdbe2da-4cae-4fb6-b037-16e1a3e61f01",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.input-box",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.input-box", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[5]/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "44790539-c9f4-4b11-a839-eb1d67171e40",
+      "comment": "",
+      "command": "type",
+      "target": "css=input[placeholder*='шукаю']",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.pr-40", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[5]/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${searchTerm}"
+    }, {
+      "id": "b44b0453-bf42-4e2d-9dab-52401a16da84",
+      "comment": "",
+      "command": "click",
+      "target": "css=.search__btn",
+      "targets": [
+        ["css=.search__btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[5]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "865b28e5-98b4-451f-9d0e-11582b335848",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//button[@type='submit']",
+      "targets": [
+        ["css=.search__btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[5]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "09ab1113-b92b-4ad9-ac03-30b72131497c",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#\\32 1606660\\3A 584 .lazy",
+      "targets": [
+        ["css=#\\32 1606660\\3A 584 .lazy", "css:finder"],
+        ["xpath=//img[@title='Футболка бавовняна з принтом для жінки LIDL 371629 білий Esmara (321974620)']", "xpath:img"],
+        ["xpath=//article[@id='21606660:584']/div/div/form/div/a/span/img", "xpath:idRelative"],
+        ["xpath=//article[2]/div/div/form/div/a/span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f1a329a-ea2c-49e9-808e-7edb58565835",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=#\\32 1606660\\3A 584 .p__info_name",
+      "targets": [
+        ["css=#\\32 1606660\\3A 584 .p__info_name", "css:finder"],
+        ["xpath=//article[@id='21606660:584']/div/div/form/div[2]/div/div/a/header", "xpath:idRelative"],
+        ["xpath=//article[2]/div/div/form/div[2]/div/div/a/header", "xpath:position"],
+        ["xpath=//header[contains(.,'Футболка бавовняна з принтом для жінки LIDL 371629 білий Esmara (321974620)')]", "xpath:innerText"]
+      ],
+      "value": "productTitle"
+    }, {
+      "id": "a32dedef-6f04-4b06-8e52-58640717ce28",
+      "comment": "",
+      "command": "echo",
+      "target": "${productTitle}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "471d523f-518a-4265-b698-a20a1c4a7ca5",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=(//a[contains(@class,'product-card__name')])[1]",
+      "targets": [
+        ["css=#\\32 1606660\\3A 584 .p__info_name", "css:finder"],
+        ["xpath=//article[@id='21606660:584']/div/div/form/div[2]/div/div/a/header", "xpath:idRelative"],
+        ["xpath=//article[2]/div/div/form/div[2]/div/div/a/header", "xpath:position"],
+        ["xpath=//header[contains(.,'Футболка бавовняна з принтом для жінки LIDL 371629 білий Esmara (321974620)')]", "xpath:innerText"]
+      ],
+      "value": "Футболка бавовняна з принтом для жінки LIDL 371629 білий Esmara (321974620)"
+    }]
+  }, {
+    "id": "73a429ca-d3b5-41c4-aa08-5394f4960bf0",
+    "name": "Go to the category \"Women > Clothing\"",
+    "commands": [{
+      "id": "2fb0c22a-4e06-4743-b2ab-3fde6ad5951a",
+      "comment": "",
+      "command": "open",
+      "target": "https://kasta.ua/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bdd6e0b8-8535-4a02-b337-97c66184d175",
+      "comment": "",
+      "command": "click",
+      "target": "css=.flex-shrink-0:nth-child(3) .dsc__icon",
+      "targets": [
+        ["css=.flex-shrink-0:nth-child(3) .dsc__icon", "css:finder"],
+        ["xpath=//img[contains(@src,'https://cdn.kasta.ua/imgw/loc/0x0/s3/uploads/discovery_bar_icons/b84615ba57dd486f88dabf90982d3362.png')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div[2]/div/div[6]/div/a[3]/div/img", "xpath:idRelative"],
+        ["xpath=//a[3]/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5910ec44-944e-4680-90f6-934d0f75d814",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.dsc__tab--active > .dsc__icon",
+      "targets": [
+        ["css=.dsc__tab--active > .dsc__icon", "css:finder"],
+        ["xpath=//img[contains(@src,'https://cdn.kasta.ua/imgw/loc/0x0/s3/uploads/discovery_bar_icons/b84615ba57dd486f88dabf90982d3362.png')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div[2]/div/div[6]/div/a[3]/div/img", "xpath:idRelative"],
+        ["xpath=//a[3]/div/img", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e0d7688c-1284-4171-a4d0-5bb23e0eca5a",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//img[contains(@src,'https://cdn.kasta.ua/imgw/loc/0x0/s3/uploads/landing_images/2025/04/519/6544f7941db6443e9c7c857e9334a6a3.jpg')]",
+      "targets": [
+        ["css=.section__gallery-item:nth-child(1) img", "css:finder"],
+        ["xpath=//img[contains(@src,'https://cdn.kasta.ua/imgw/loc/0x0/s3/uploads/landing_images/2025/04/519/6544f7941db6443e9c7c857e9334a6a3.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='reactContent']/div/div[6]/div/div[3]/section/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//section/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecbc98de-0f2b-4cf0-99df-925edb2188a8",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.flex-shrink-0:nth-child(3) .dsc__icon",
+      "targets": [
+        ["css=.flex-shrink-0:nth-child(3) .dsc__icon", "css:finder"],
+        ["xpath=//img[contains(@src,'https://cdn.kasta.ua/imgw/loc/0x0/s3/uploads/discovery_bar_icons/b84615ba57dd486f88dabf90982d3362.png')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div[2]/div/div[6]/div/a[3]/div/img", "xpath:idRelative"],
+        ["xpath=//a[3]/div/img", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "f270398c-cef4-490f-b8e2-27dfc4afc2f4",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.flex:nth-child(2) > .t-accent\\3Ahover",
+      "targets": [
+        ["css=.flex:nth-child(2) > .t-accent\\3Ahover", "css:finder"],
+        ["xpath=(//a[contains(text(),'Одяг')])[2]", "xpath:link"],
+        ["xpath=//form[@id='filters']/div[3]/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/uk/market/odezhda/')])[3]", "xpath:href"],
+        ["xpath=//div[3]/div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b290081-09d9-4edc-8967-c4c0ed045610",
+      "comment": "",
+      "command": "storeText",
+      "target": "linkText=H&M",
+      "targets": [
+        ["linkText=H&M", "linkText"],
+        ["css=.shrink-0:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'H&M')])[2]", "xpath:link"],
+        ["xpath=//div[@id='catalogue']/div[2]/div[3]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/uk/market/sukni-h-m/')]", "xpath:href"],
+        ["xpath=//div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": "filterTitle"
+    }, {
+      "id": "69ae2acb-fbdd-4aca-9264-a70e9d450826",
+      "comment": "",
+      "command": "echo",
+      "target": "${filterTitle}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "465dd1b7-a8e5-4d36-93e0-4b742dbf08ef",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=(//a[contains(text(),'H&M')])[2]",
+      "targets": [
+        ["linkText=H&M", "linkText"],
+        ["css=.shrink-0:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'H&M')])[2]", "xpath:link"],
+        ["xpath=//div[@id='catalogue']/div[2]/div[3]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/uk/market/sukni-h-m/')]", "xpath:href"],
+        ["xpath=//div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": "H&M"
+    }]
+  }, {
+    "id": "fcdd55d5-3e17-4f15-934f-d79288af242b",
+    "name": "Adding a product to the cart",
+    "commands": [{
+      "id": "0b521b1b-0e64-4720-b975-f72e51b4fe00",
+      "comment": "",
+      "command": "open",
+      "target": "https://kasta.ua/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "527c8482-228c-4ed9-9b8a-b8d159527e4c",
+      "comment": "",
+      "command": "store",
+      "target": "рюкзак",
+      "targets": [],
+      "value": "searchQuery"
+    }, {
+      "id": "5e465ea8-702a-4d08-8cb3-0d361e2f0572",
+      "comment": "",
+      "command": "type",
+      "target": "css=input[placeholder*='шукаю']",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.input-box", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[5]/div/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${searchQuery}"
+    }, {
+      "id": "d68fe007-059f-4bf7-a1e3-c315fec26895",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[@type='submit']",
+      "targets": [
+        ["css=.search__btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[5]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65bda42b-fddc-4e75-a1b9-55f5d067af2c",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.search__btn",
+      "targets": [
+        ["css=.search__btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[5]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "326337e2-5a37-496d-810c-4c591e9d081a",
+      "comment": "",
+      "command": "click",
+      "target": "css=#\\31 9758407\\3A 702 .lazy",
+      "targets": [
+        ["css=#\\31 9758407\\3A 702 .lazy", "css:finder"],
+        ["xpath=//img[@title='Рюкзак для хлопчика BRAWL STARS No Brand рюкзак (304996871)']", "xpath:img"],
+        ["xpath=//article[@id='19758407:702']/div/div/form/div/a/span/img", "xpath:idRelative"],
+        ["xpath=//article[2]/div/div/form/div/a/span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "88f29778-caeb-4a72-be38-90d77cbdde3c",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//div[@id='pdRoot']/div[4]/div/div",
+      "targets": [
+        ["css=.p__bg", "css:finder"],
+        ["xpath=//div[@id='pdRoot']/div[4]/div/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div[4]/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ac3425dc-6926-44ff-a0a8-531f486bcaea",
+      "comment": "",
+      "command": "click",
+      "target": "id=productBuy",
+      "targets": [
+        ["id=productBuy", "id"],
+        ["css=#productBuy", "css:finder"],
+        ["xpath=//button[@id='productBuy']", "xpath:attributes"],
+        ["xpath=//div[@id='pdRoot']/div[4]/div/div/form/div[3]/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Купити')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a5cf44a-026c-4aaa-ab74-3357c91883d1",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.SbBg",
+      "targets": [
+        ["css=.SbBg", "css:finder"],
+        ["xpath=//div[@id='cart']/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[4]/div/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "9694ee96-a701-413b-be43-e56b52ed8c59",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//div[@id='cart']/div/div",
+      "targets": [
+        ["css=.SbBg", "css:finder"],
+        ["xpath=//div[@id='cart']/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[4]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "aa1a2a71-d870-4438-b6f8-edaef021747a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["23e0e122-99e5-4684-bfa3-584c1d7789b5"]
+  }],
+  "urls": ["https://kasta.ua/"],
+  "plugins": []
+}
